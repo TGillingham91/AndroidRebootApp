@@ -17,17 +17,23 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <receiver android:name=".Receivers.OnBootReceiver">
+        <receiver android:name=".broadcasts.OnBootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_REPLACED"/>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+
+        <service
+            android:name=".broadcasts.RebootService"
+            android:exported="false" />
+        <service
+            android:name=".broadcasts.AlarmService"
+            android:exported="false" />
     </application>
 
 

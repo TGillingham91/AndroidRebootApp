@@ -1,4 +1,4 @@
-package com.mml.androidreboot.Receivers;
+package com.mml.androidreboot.broadcasts;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -14,7 +14,6 @@ public class OnBootReceiver extends BroadcastReceiver {
 
         if(Intent.ACTION_BOOT_COMPLETED.equals(action) || Intent.ACTION_PACKAGE_REPLACED.equals(action)) {
             Intent i = new Intent(context, MainActivity.class);
-
             i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
             context.startActivity(i);
